@@ -1,7 +1,7 @@
 // --- 1. BASE DE DATOS LOCAL Y CATÁLOGO ---
 let productos = JSON.parse(localStorage.getItem('hypek_productos'));
 
-// Generar las 30 gorras automáticamente la primera vez
+// Generar las 30 gorras automáticamente la primera vez con diseño de recuadro limpio
 if (!productos || productos.length === 0) {
     productos = [];
     for (let i = 1; i <= 30; i++) {
@@ -10,7 +10,8 @@ if (!productos || productos.length === 0) {
             nombre: `Gorra Hypek V2 - Modelo ${i}`,
             precioOriginal: 120000,
             precioRebajado: 85000,
-            imagen: `https://via.placeholder.com/300x300/000000/ffffff?text=HYPEK+${i}`
+            // Imagen cuadrada minimalista monocromática optimizada
+            imagen: `https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&auto=format&fit=crop&q=80`
         });
     }
     guardarProductos();
@@ -27,7 +28,9 @@ function renderizarCatalogo(lista = productos) {
     lista.forEach(producto => {
         grid.innerHTML += `
             <div class="producto-card">
-                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <div class="imagen-contenedor">
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                </div>
                 <h3>${producto.nombre}</h3>
                 <p class="precio-original">$${producto.precioOriginal.toLocaleString('es-CO')}</p>
                 <p class="precio-rebajado">$${producto.precioRebajado.toLocaleString('es-CO')}</p>
@@ -146,7 +149,7 @@ function agregarGorra() {
     const precioRebajado = parseInt(document.getElementById('admin-precio').value);
     let imagen = document.getElementById('admin-imagen').value;
 
-    if (!imagen) imagen = "https://via.placeholder.com/300x300/000000/ffffff?text=Nueva+Gorra";
+    if (!imagen) imagen = "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&auto=format&fit=crop&q=80";
 
     if (nombre && precioRebajado) {
         productos.push({
