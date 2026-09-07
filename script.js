@@ -56,7 +56,7 @@ function agregarAlCarrito(id) {
     carrito.push(producto);
     guardarCarrito();
     actualizarCarrito();
-    document.getElementById('panel-carrito').classList.add('activo'); // Abre el carrito al añadir
+    document.getElementById('panel-carrito').classList.add('activo');
 }
 
 function eliminarDelCarrito(index) {
@@ -101,7 +101,7 @@ function enviarPedidoWhatsApp() {
         return;
     }
 
-    let telefono = "573000000000"; // PON AQUÍ TU NÚMERO DE CELULAR SIN EL '+'
+    let telefono = "573000000000"; // Reemplaza con tu número sin el '+'
     let mensaje = "Hola Hypek, quiero hacer el siguiente pedido:%0A%0A";
     let total = 0;
 
