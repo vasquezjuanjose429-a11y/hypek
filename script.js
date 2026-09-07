@@ -1,7 +1,7 @@
 // --- 1. BASE DE DATOS LOCAL Y CATÁLOGO ---
 let productos = JSON.parse(localStorage.getItem('hypek_productos'));
 
-// Generar las 30 gorras automáticamente la primera vez con diseño de recuadro limpio
+// Generar las 30 gorras automáticamente la primera vez con imágenes en recuadro
 if (!productos || productos.length === 0) {
     productos = [];
     for (let i = 1; i <= 30; i++) {
@@ -10,7 +10,6 @@ if (!productos || productos.length === 0) {
             nombre: `Gorra Hypek V2 - Modelo ${i}`,
             precioOriginal: 120000,
             precioRebajado: 85000,
-            // Imagen cuadrada minimalista monocromática optimizada
             imagen: `https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&auto=format&fit=crop&q=80`
         });
     }
