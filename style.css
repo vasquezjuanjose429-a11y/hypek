@@ -87,13 +87,23 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-.producto-card img {
+/* Contenedor de Imagen en Recuadro Uniforme */
+.imagen-contenedor {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    background-color: #f4f4f4;
+    overflow: hidden;
     margin-bottom: 15px;
-    background-color: #f0f0f0;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene el recuadro exacto sin deformar */
 }
 
 .producto-card h3 {
@@ -270,7 +280,7 @@ footer a {
     text-decoration: underline;
 }
 
-/* Botón Secreto Ajustado (Visible abajo a la izquierda sin estorbar) */
+/* Botón Secreto Admin */
 .btn-secreto {
     position: fixed;
     bottom: 20px;
