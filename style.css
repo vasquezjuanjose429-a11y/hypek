@@ -128,7 +128,7 @@ body {
 .carrito-lateral {
     position: fixed;
     top: 0;
-    right: -400px; /* Oculto por defecto */
+    right: -400px;
     width: 350px;
     height: 100vh;
     background: #fff;
@@ -140,7 +140,7 @@ body {
 }
 
 .carrito-lateral.activo {
-    right: 0; /* Visible */
+    right: 0;
 }
 
 .carrito-header, .carrito-footer {
@@ -180,10 +180,13 @@ body {
     cursor: pointer;
 }
 
-.btn-eliminar { color: #ff3333; font-size: 16px; }
+.btn-eliminar { 
+    color: #ff3333; 
+    font-size: 16px; 
+}
 
 .btn-comprar {
-    background: #25D366; /* Verde WhatsApp */
+    background: #25D366;
     color: #fff;
     border: none;
     padding: 15px;
@@ -211,6 +214,7 @@ body {
     max-width: 500px;
     margin: 100px auto;
     padding: 30px;
+    border-radius: 4px;
 }
 
 .admin-contenido input {
@@ -261,4 +265,7 @@ footer a {
     font-size: 20px;
     cursor: pointer;
 }
-.btn-secreto:hover { opacity: 1; }
+
+.btn-secreto:hover { 
+    opacity: 1; 
+}
