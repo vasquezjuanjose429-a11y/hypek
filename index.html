@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HYPEK | Exclusive Capwear & Urban Luxury</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ANNOUNCEMENT TICKER -->
+    <!-- MARQUEE / TICKER SUPERIOR -->
     <div class="ticker-wrap">
         <div class="ticker">
             <div class="ticker__item">HYPEK DROP 001 // EDICIÓN LIMITADA // ENVÍOS NACIONALES E INTERNACIONALES</div>
@@ -21,11 +21,10 @@
         </div>
     </div>
 
-    <!-- NAVBAR -->
+    <!-- NAVEGACIÓN -->
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="brand-logo">
-                <img src="logo.png" alt="HYPEK" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="logo-fallback">
                     <span class="logo-symbol">H</span>
                     <span class="logo-text">HYPEK</span>
@@ -49,7 +48,7 @@
             </div>
         </div>
 
-        <!-- SEARCH OVERLAY -->
+        <!-- BARRA DE BÚSQUEDA -->
         <div class="search-bar-container" id="searchContainer">
             <input type="text" id="searchInput" placeholder="Buscar gorras por nombre, estilo o color..." autocomplete="off">
             <button id="closeSearchBtn">&times;</button>
@@ -70,7 +69,7 @@
         </div>
     </section>
 
-    <!-- CATEGORY FILTERS -->
+    <!-- CATÁLOGO Y FILTROS -->
     <section class="catalog-section" id="catalogo">
         <div class="section-header">
             <h2 class="section-title">COLECCIÓN / CATÁLOGO</h2>
@@ -85,13 +84,13 @@
             <button class="filter-btn" data-filter="limited">LIMITED EDITION</button>
         </div>
 
-        <!-- PRODUCT GRID -->
+        <!-- REJILLA DE PRODUCTOS -->
         <div class="product-grid" id="productGrid">
-            <!-- Productos renderizados dinámicamente mediante JS -->
+            <!-- Renderizado dinámico desde script.js -->
         </div>
     </section>
 
-    <!-- PRODUCT DETAIL MODAL -->
+    <!-- MODAL DETALLE DE PRODUCTO -->
     <div class="modal" id="productModal">
         <div class="modal-content product-modal-content">
             <button class="close-modal" id="closeProductModal">&times;</button>
@@ -101,7 +100,7 @@
                         <img id="modalMainImg" src="" alt="Gorra HYPEK">
                     </div>
                     <div class="thumbnails-box" id="modalThumbnails">
-                        <!-- Miniaturas dinámicas -->
+                        <!-- Miniaturas -->
                     </div>
                 </div>
                 <div class="modal-info">
@@ -133,7 +132,7 @@
         </div>
     </div>
 
-    <!-- CART SIDEBAR -->
+    <!-- CARRITO LATERAL -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
             <h3>TU CARRITO HYPEK</h3>
@@ -157,7 +156,7 @@
     </div>
     <div class="overlay" id="globalOverlay"></div>
 
-    <!-- BRAND CONCEPT SECTION -->
+    <!-- SECCIÓN CONCEPTO -->
     <section class="concept-section" id="about">
         <div class="concept-container">
             <div class="concept-text">
@@ -167,7 +166,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- PIE DE PÁGINA -->
     <footer class="footer" id="contacto">
         <div class="footer-container">
             <div class="footer-brand">
@@ -194,6 +193,6 @@
         </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
