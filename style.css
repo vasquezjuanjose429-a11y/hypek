@@ -9,9 +9,10 @@
 body {
     background-color: #fcfcfc;
     color: #000;
+    padding-bottom: 50px;
 }
 
-/* Navegación */
+/* Navegación Fija Perfecta */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -22,6 +23,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%;
 }
 
 .logo {
@@ -41,6 +43,7 @@ body {
 .cart-icon {
     cursor: pointer;
     font-weight: bold;
+    font-size: 16px;
 }
 
 /* Hero Section */
@@ -60,11 +63,13 @@ body {
 /* Catálogo Grid */
 .catalogo {
     padding: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 30px;
 }
 
@@ -74,43 +79,51 @@ body {
     padding: 20px;
     text-align: center;
     transition: transform 0.3s;
+    border-radius: 6px;
 }
 
 .producto-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
 .producto-card img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
     margin-bottom: 15px;
     background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.producto-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 .precio-original {
     text-decoration: line-through;
     color: #888;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .precio-rebajado {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 6px 0 12px 0;
 }
 
 .btn-negro {
     background: #000;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     width: 100%;
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
 .btn-blanco {
@@ -124,7 +137,7 @@ body {
     margin-top: 10px;
 }
 
-/* Panel del Carrito */
+/* Panel del Carrito Lateral */
 .carrito-lateral {
     position: fixed;
     top: 0;
@@ -196,7 +209,7 @@ body {
     cursor: pointer;
 }
 
-/* Modal Términos y Admin */
+/* Modales de Términos y Administrador */
 .modal, .admin-modal {
     display: none;
     position: fixed;
@@ -212,9 +225,9 @@ body {
     background: #fff;
     width: 90%;
     max-width: 500px;
-    margin: 100px auto;
+    margin: 80px auto;
     padding: 30px;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .admin-contenido input {
@@ -222,6 +235,7 @@ body {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 #lista-admin {
@@ -242,12 +256,13 @@ body {
     color: red;
 }
 
-/* Footer y Botón Secreto */
+/* Footer */
 footer {
     text-align: center;
     padding: 40px;
     background: #000;
     color: #fff;
+    margin-top: 40px;
 }
 
 footer a {
@@ -255,15 +270,21 @@ footer a {
     text-decoration: underline;
 }
 
+/* Botón Secreto Ajustado (Visible abajo a la izquierda sin estorbar) */
 .btn-secreto {
     position: fixed;
-    bottom: 10px;
-    left: 10px;
-    opacity: 0.1;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0.15;
     border: none;
-    background: none;
-    font-size: 20px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 18px;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: opacity 0.3s;
 }
 
 .btn-secreto:hover { 
