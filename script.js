@@ -152,7 +152,7 @@ function agregarGorra() {
         productos.push({
             id: Date.now(),
             nombre: nombre,
-            precioOriginal: precioRebajado + 30000, // Calcula un precio original ficticio
+            precioOriginal: precioRebajado + 30000,
             precioRebajado: precioRebajado,
             imagen: imagen
         });
@@ -160,7 +160,6 @@ function agregarGorra() {
         renderizarCatalogo();
         actualizarListaAdmin();
         
-        // Limpiar campos
         document.getElementById('admin-nombre').value = '';
         document.getElementById('admin-precio').value = '';
         document.getElementById('admin-imagen').value = '';
