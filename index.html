@@ -2,234 +2,88 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HYPEK | Ultra Monochrome Streetwear</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Hypek | Luxury Streetwear</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- TICKER ANUNCIOS -->
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <div class="ticker__item">ENVÍOS A TODA COLOMBIA</div>
-            <div class="ticker__item">•</div>
-            <div class="ticker__item">HYPEK 2.0 ULTRA MONOCHROME COLLECTION</div>
-            <div class="ticker__item">•</div>
-            <div class="ticker__item">PAGO CONTRAENTREGA / WHATSAPP PREFERENTE</div>
-            <div class="ticker__item">•</div>
-            <div class="ticker__item">OFERTA LIMITADA DE LANZAMIENTO</div>
-            <div class="ticker__item">•</div>
-            <div class="ticker__item">ENVÍOS A TODA COLOMBIA</div>
-            <div class="ticker__item">•</div>
-            <div class="ticker__item">HYPEK 2.0 ULTRA MONOCHROME COLLECTION</div>
+    <!-- Navegación -->
+    <header class="navbar">
+        <div class="logo">HYPEK</div>
+        <div class="search-container">
+            <input type="text" id="buscador" placeholder="Buscar gorras..." onkeyup="filtrarGorras()">
         </div>
-    </div>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="brand-logo">
-                <img src="logo.png" alt="HYPEK Logo" class="logo-img">
-            </a>
-
-            <div class="nav-links" id="navLinks">
-                <a href="#hero" class="nav-item active">INICIO</a>
-                <a href="#catalog" class="nav-item">CATÁLOGO</a>
-                <a href="#concept" class="nav-item">CONCEPTO</a>
-                <a href="#contact" class="nav-item">CONTACTO</a>
-            </div>
-
-            <div class="nav-actions">
-                <button class="search-btn" id="openSearchBtn" title="Buscar"><i class="fas fa-search"></i></button>
-                <button class="cart-btn" id="openCartBtn" title="Carrito">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-                <button class="mobile-toggle" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-
-        <!-- SEARCH OVERLAY -->
-        <div class="search-bar-container" id="searchContainer">
-            <input type="text" id="searchInput" placeholder="Buscar productos por nombre o categoría...">
-            <button id="closeSearchBtn">&times;</button>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="hero" id="hero">
-        <div class="hero-content">
-            <span class="hero-subtitle">Colección Limitada 2026</span>
-            <h1 class="hero-title">ULTRA MONOCHROME AESTHETIC</h1>
-            <p class="hero-description">Diseño minimalista, siluetas sobrias y streetwear de corte premium. Define tu presencia en blanco y negro.</p>
-            <div class="hero-buttons">
-                <a href="#catalog" class="btn btn-primary">VER CATÁLOGO</a>
-                <a href="https://wa.me/?text=Hola%20HYPEK,%20quiero%20más%20información" target="_blank" class="btn btn-whatsapp">
-                    <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WHATSAPP
-                </a>
-            </div>
+        <div class="cart-icon" onclick="toggleCarrito()">
+            Bolsa <span id="contador-carrito">(0)</span>
         </div>
     </header>
 
-    <!-- CATÁLOGO SECTION -->
-    <section class="catalog-section" id="catalog">
-        <div class="section-header">
-            <h2 class="section-title">CATÁLOGO EXCLUSIVO</h2>
-            <p class="section-subtitle">30 piezas seleccionadas con precios de lanzamiento</p>
+    <!-- Contenido Principal -->
+    <main>
+        <section class="hero">
+            <h1>COLECCIÓN V 2.0</h1>
+            <p>Exclusividad y diseño monocromático.</p>
+        </section>
+
+        <!-- Catálogo de Productos -->
+        <section class="catalogo">
+            <div id="grid-productos" class="grid">
+                <!-- Las gorras se cargarán aquí desde JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Panel del Carrito (Oculto por defecto) -->
+    <div id="panel-carrito" class="carrito-lateral">
+        <div class="carrito-header">
+            <h2>Tu Bolsa</h2>
+            <button class="btn-cerrar" onclick="toggleCarrito()">✕</button>
         </div>
-
-        <!-- CONTROLES FILTRO Y ORDEN -->
-        <div class="catalog-controls">
-            <div class="filter-wrapper">
-                <button class="filter-btn active" data-filter="all">TODOS</button>
-                <button class="filter-btn" data-filter="hoodies">HOODIES & BUZOS</button>
-                <button class="filter-btn" data-filter="tshirts">CAMISETAS OVERSIZE</button>
-                <button class="filter-btn" data-filter="pants">PANTALONES & JOGGERS</button>
-                <button class="filter-btn" data-filter="accessories">ACCESORIOS</button>
-            </div>
-
-            <div class="sort-wrapper">
-                <select id="sortSelect">
-                    <option value="featured">Ordenar por: Destacados</option>
-                    <option value="low-high">Precio: Menor a Mayor</option>
-                    <option value="high-low">Precio: Mayor a Menor</option>
-                    <option value="discount">Mayor Descuento</option>
-                </select>
-            </div>
+        <div id="items-carrito">
+            <!-- Los items del carrito aparecerán aquí -->
         </div>
-
-        <!-- PRODUCT GRID (Inyectado por JavaScript) -->
-        <div class="product-grid" id="productGrid"></div>
-    </section>
-
-    <!-- CONCEPTO SECTION -->
-    <section class="concept-section" id="concept">
-        <div class="concept-container">
-            <div class="concept-text">
-                <h2>EL CONCEPTO HYPEK</h2>
-                <p>Nuestra identidad radica en la ausencia de distractores. El monocromo no es solo la falta de color; es la máxima expresión de precisión, contraste y actitud urbana. Cada prenda responde a estándares exigentes de durabilidad y estilo sin fecha de caducidad.</p>
-            </div>
+        <div class="carrito-footer">
+            <h3>Total: $<span id="total-carrito">0</span></h3>
+            <button class="btn-comprar" onclick="enviarPedidoWhatsApp()">Pedir por WhatsApp</button>
         </div>
-    </section>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="footer" id="contact">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="logo.png" alt="HYPEK Logo" class="logo-img">
-                <p>Marcando la tendencia monochrome en el streetwear colombiano.</p>
-            </div>
-
-            <div class="footer-column">
-                <h4>Navegación</h4>
-                <ul>
-                    <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#catalog">Catálogo</a></li>
-                    <li><a href="#concept">Concepto</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Información Legal</h4>
-                <ul>
-                    <li><a href="#" id="linkTerms">Términos y Condiciones</a></li>
-                    <li><a href="#" id="linkPrivacy">Política de Privacidad</a></li>
-                    <li><a href="#" id="linkShipping">Envíos y Devoluciones</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Contacto</h4>
-                <ul>
-                    <li><a href="mailto:hypekcolombia@gmail.com"><i class="fas fa-envelope"></i> hypekcolombia@gmail.com</a></li>
-                    <li><a href="https://wa.me/?text=Consulta%20HYPEK" target="_blank"><i class="fab fa-whatsapp"></i> Atención WhatsApp</a></li>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Colombia</a></li>
-                </ul>
-            </div>
+    <!-- Modal de Términos y Condiciones -->
+    <div id="modal-terminos" class="modal">
+        <div class="modal-contenido">
+            <h2>Términos y Condiciones Hypek</h2>
+            <p>1. <strong>Envíos:</strong> Realizamos envíos a todo el país. Los tiempos de entrega varían según la ciudad.</p>
+            <p>2. <strong>Devoluciones:</strong> Solo se aceptan devoluciones por defectos de fábrica en los primeros 5 días tras recibir el producto. La prenda debe estar en perfecto estado y con etiquetas.</p>
+            <p>3. <strong>Privacidad:</strong> Tus datos de pedido son manejados de forma confidencial y exclusiva para el despacho de la mercancía.</p>
+            <button class="btn-negro" onclick="cerrarTerminos()">Aceptar y Cerrar</button>
         </div>
+    </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 HYPEK COLOMBIA. Todos los derechos reservados.</p>
-        </div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Hypek. Todos los derechos reservados.</p>
+        <a href="#" onclick="abrirTerminos(event)">Términos y Condiciones</a>
     </footer>
 
-    <!-- OVERLAY -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- CART SIDEBAR -->
-    <aside class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>TU CARRITO</h3>
-            <button id="closeCartBtn">&times;</button>
-        </div>
-
-        <div class="cart-body" id="cartBody">
-            <!-- Items del carrito -->
-        </div>
-
-        <div class="cart-footer">
-            <div class="cart-total-row">
-                <span>TOTAL:</span>
-                <span id="cartTotal">$0 COP</span>
-            </div>
-            <p class="cart-note">El pedido se finalizará y coordinará directamente por WhatsApp.</p>
-            <button class="btn btn-whatsapp btn-block" id="checkoutWaBtn">
-                <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> FINALIZAR POR WHATSAPP
-            </button>
-        </div>
-    </aside>
-
-    <!-- PRODUCT DETAIL MODAL -->
-    <div class="modal" id="productModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeProductModal">&times;</button>
-            <div class="product-modal-grid">
-                <div class="modal-media">
-                    <div class="main-image-box">
-                        <img id="modalImg" src="" alt="Producto">
-                    </div>
-                </div>
-                <div class="modal-info">
-                    <span class="modal-tag" id="modalCategory">CATEGORÍA</span>
-                    <h2 class="modal-title" id="modalTitle">Nombre del producto</h2>
-                    <div class="modal-price-box">
-                        <span class="price-original" id="modalOriginalPrice">$0</span>
-                        <span class="price-discount" id="modalDiscountPrice">$0</span>
-                    </div>
-                    <p class="modal-desc" id="modalDesc">Descripción detallada del producto.</p>
-                    
-                    <div class="quantity-selector">
-                        <span>Cantidad:</span>
-                        <div class="qty-control">
-                            <button id="btnDecQty">-</button>
-                            <span id="qtyVal">1</span>
-                            <button id="btnIncQty">+</button>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary btn-block" id="modalAddToCartBtn">AÑADIR AL CARRITO</button>
-                </div>
-            </div>
+    <!-- Panel de Administrador (Oculto) -->
+    <div id="panel-admin" class="admin-modal">
+        <div class="admin-contenido">
+            <h2>Panel de Administrador</h2>
+            <input type="text" id="admin-nombre" placeholder="Nombre de la gorra">
+            <input type="number" id="admin-precio" placeholder="Precio (ej. 85000)">
+            <input type="text" id="admin-imagen" placeholder="URL de la imagen (o deja vacío para default)">
+            <button class="btn-negro" onclick="agregarGorra()">Agregar al Catálogo</button>
+            <button class="btn-blanco" onclick="cerrarAdmin()">Cerrar Panel</button>
+            
+            <h3>Inventario Actual (Clic para eliminar)</h3>
+            <ul id="lista-admin"></ul>
         </div>
     </div>
 
-    <!-- LEGAL INFO MODAL -->
-    <div class="modal" id="legalModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeLegalModal">&times;</button>
-            <h2 id="legalTitle" style="margin-bottom: 1rem; font-size: 1.5rem;">Información Legal</h2>
-            <div class="legal-body" id="legalBody">
-                <!-- Contenido dinámico -->
-            </div>
-        </div>
-    </div>
+    <!-- Botón Secreto Admin (Abajo a la izquierda) -->
+    <button class="btn-secreto" onclick="abrirAdmin()">⚙️</button>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
